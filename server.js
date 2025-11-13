@@ -4,6 +4,10 @@ const app = express();
 const port = 3000;
 const path = require("path"); //pegar o caminho dos arquivos estaticos
 
+// middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 //informar onde os arquivos estao
 
 app.use(express.static(path.join(__dirname, "public"))); //pasta raiz dos arquivos estaticos
@@ -31,6 +35,9 @@ const apiRoutes = require("./routes/api"); //puxa as rotas da api
 app.use(express.json()); //habilitar o uso do json no express
 
 app.use("/api/users/", apiRoutes); //alcançar as rotas da api (api.js)
+
+const cadastroRoutes = require("./routes/rotacadastro");
+app.use("/api/cadastro", cadastroRoutes);
 
 //vincular o servidor na porta
 app.listen(port, () => {

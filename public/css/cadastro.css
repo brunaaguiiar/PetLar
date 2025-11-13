@@ -1,0 +1,42 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card {
+  border-radius: 1.5rem;
+}
+
+.btn-success {
+  background-color: #6cb76f;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #5aa95d;
+}
+
+.btn-outline-success {
+  color: #5aa95d;
+  border-color: #5aa95d;
+}
+
+.btn-outline-success:hover {
+  background-color: #5aa95d;
+  color: #fff;
+}
+
+.form-control:focus {
+  border-color: #6cb76f;
+  box-shadow: 0 0 0 0.15rem rgba(108, 183, 111, 0.25);
+}
+
+footer {
+  font-size: 0.9rem;
+}
