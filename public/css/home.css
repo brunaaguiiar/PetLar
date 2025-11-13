@@ -76,7 +76,7 @@ a {
 
 .container-principal {
   height: 430px;
-  background-image: url("../../public/img/home.png");
+  background-image: url("/img/home.png");
   background-size: contain;
   background-position: right 78%;
   background-repeat: no-repeat;

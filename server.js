@@ -6,15 +6,24 @@ const path = require("path"); //pegar o caminho dos arquivos estaticos
 
 //informar onde os arquivos estao
 
-app.use(express.static("public")); //pasta raiz dos arquivos estaticos
+app.use(express.static(path.join(__dirname, "public"))); //pasta raiz dos arquivos estaticos
 
 //chamar o modulo de conecxão com o banco de dados
 const db = require("./db");
 
 //api - rotas do sistema
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname,"public", "src", "home", "index.html"));
+  res.sendFile(path.join(__dirname, "src", "index.html"));
 });
+
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "src", "login.html"));
+});
+
+app.get("/cadastro", (req, res) => {
+  res.sendFile(path.join(__dirname, "src", "cadastro.html"));
+});
+
 
 //importar o modulo de rotas
 const apiRoutes = require("./routes/api"); //puxa as rotas da api
