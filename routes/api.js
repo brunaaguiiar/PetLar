@@ -1,38 +1,62 @@
 //importar o express
 const express = require('express');
 
-//middleware
+//middleware (recebe e processa a requisição e encaminha)
 const router = express.Router();
 
-//trazer a conecxão com o banco de dados
-const db = require('../db');    
+//trazer a conexão do banco de dados
+const db = require('../db');
 
-//criar rotas 
-router.post("/", async (req, res) => {
-  const { nome, email, senha } = req.body;
+//criar as rotas
+//cadastrar um usuário: /api/users/
+router.post('/', (req, res) =>{
+    const {nome, email, senha} = req.body;
 
-  if (!nome || !email || !senha) {
-    return res.status(400).json({ error: "Preencha todos os campos!" });
-  }
-
-  try {
-   const query = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
-    db.query(query, [nome, email, hashedPassword], (err, result) => {
-      if (err) {
-        if (err.code === "ER_DUP_ENTRY") {
-          return res.status(400).json({ error: "E-mail já cadastrado!" });
-        }
-        console.error("Erro ao cadastrar usuário:", err);
-        return res.status(500).json({ error: "Erro no servidor!" });
-      }
-
-      res.status(201).json({ message: "Usuário cadastrado com sucesso!" });
+    //executar a instrução SQL
+    db.query('INSERT INTO users (nome, email, senha) VALUES (?, ?)', [nome, email, senha], 
+        (err, result) =>{
+            if (err) return res.status(500).send(err); //erro do lado do servidor
+            res.status(201).json({id: result.insertId, nome, email, senha}); //criou o registro
     });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Erro ao processar o cadastro" });
-  }
 });
 
 
- module.exports = router;
+//carrregar os usuários (salvos no Banco de Dados)
+router.get('/', (req, res)=>{
+    //instrução SQL
+    db.query('SELECT * FROM users', (err, results) =>{
+        if (err) return res.status(500).send(err);
+        res.json(results);
+    })
+})
+
+//rota para editar, pode-se utilizar o Patch para atualizar partes específicas
+router.put('/:id', (req, res) => {
+    //extrair os dados
+    const {nome, email} = req.body;
+    const {id} = req.params; //de acordo com o ID do usuário para realizar as ações
+
+    //NÃO FAÇA UPDATE SEM WHERE
+    //executar a instrução SQL
+    db.query('UPDATE users SET nome = ?, email = ? WHERE id = ?', [nome, email, id], (err) =>{
+        if(err) return res.status(500).send(err);
+        res.json({id, nome, email});
+    });
+});
+
+//rota para excluir
+router.delete('/:id', (req, res) =>{
+    //pegar o ID do usuário
+    //NÃO FAÇA DELETE SEM WHERE
+    const {id} = req.params;
+
+    //executar a instrução SQL
+    db.query('DELETE FROM users WHERE id = ?', [id], (err)=>{
+        if(err) return res.status(500).send(err);
+        res.sendStatus(204);
+    });
+});
+
+
+//exportar as rotas
+module.exports = router;
