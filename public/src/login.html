@@ -1,14 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta content="0; url=login/login.html" />
-    <title>Pet Lar</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="app.js"></script>
-  </head>
-  <body>
-    <h1>login</h1>
-  </body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — PetLar</title>
+    <link rel="stylesheet" href="/css/login.css">
+    
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-left">
+            <img src="/img/logo.png" alt="PetLar" class="logo">
+        </div>
+
+        <div class="nav-right">
+            <a class="btn-outline" href="/login">Login</a>
+            <a class="btn-primary" href="/cadastro">Cadastrar-se</a>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO -->
+    <main class="container">
+        <div class="card">
+            <h2>Entrar na sua conta</h2>
+
+            <form id="loginForm">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" placeholder="Digite seu e-mail" required>
+
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" placeholder="Digite sua senha" required>
+
+                <button class="btn-primary full" type="submit">Entrar</button>
+            </form>
+
+            <p class="texto-link">
+                Não tem conta? <a href="/cadastro">Cadastrar-se</a>
+            </p>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        © 2025 PetLar — Promovendo adoção responsável
+    </footer>
+
+    <script src="/js/login.js"></script>
+</body>
 </html>
