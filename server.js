@@ -17,15 +17,15 @@ const db = require("./db");
 
 //api - rotas do sistema
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "src", "index.html"));
+  res.sendFile(path.join(__dirname, "public", "src", "index.html"));
 });
 
 app.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "src", "login.html"));
+  res.sendFile(path.join(__dirname, "public", "src", "login.html"));
 });
 
 app.get("/cadastro", (req, res) => {
-  res.sendFile(path.join(__dirname, "src", "cadastro.html"));
+  res.sendFile(path.join(__dirname, "public", "src", "cadastro.html"));
 });
 
 
@@ -35,9 +35,6 @@ const apiRoutes = require("./routes/api"); //puxa as rotas da api
 app.use(express.json()); //habilitar o uso do json no express
 
 app.use("/api/users/", apiRoutes); //alcançar as rotas da api (api.js)
-
-const cadastroRoutes = require("./routes/rotacadastro");
-app.use("/api/cadastro", cadastroRoutes);
 
 //vincular o servidor na porta
 app.listen(port, () => {
