@@ -27,7 +27,7 @@ body {
 /* Banner */
 .banner {
     text-align: left;
-    padding: 150px 20px;
+    padding: 200px 30px;
     background-image: url("/img/home.png");
     background-repeat: no-repeat;
     background-position: right 78%;
@@ -111,4 +111,174 @@ body {
     padding: 20px 0;
     margin-top: 40px;
     color: #666;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  padding-inline: 16px;
+}
+
+.logo {
+  width: 275px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-lista {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  margin: 0;
+  gap: 20px;
+}
+
+.nav-lista a {
+  font-size: 18px;
+  color: black;
+  padding-block: 16px;
+  text-decoration: none;
+}
+
+.nav-lista a:hover {
+  color: #8bb86b;
+}
+
+.nav-direita {
+  display: flex;
+  gap: 15px;
+}
+.btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.verde {
+  background-color: #73994f;
+  color: white;
+  border: 2px solid #73994f;
+}
+
+.btn.verde:hover {
+  background-color: white;
+  color: #8bb86b;
+}
+
+.btn.branco {
+  background-color: white;
+  color: #8bb86b;
+  border: 2px solid #8bb86b;
+}
+
+.btn.branco:hover {
+  background-color: #8bb86b;
+  color: white;
+}
+
+.container-principal {
+  height: 430px;
+  background-image: url("/img/home.png");
+  background-size: contain;
+  background-position: right 78%;
+  background-repeat: no-repeat;
+}
+
+.text-content {
+  width: 55%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-content h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+
+.botoes {
+  display: flex;
+  gap: 30px;
+}
+
+.btn-adotar,
+.btn-divulgar {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-adotar:hover,
+.btn-divulgar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-divulgar:hover {
+  color: #8bb86b;
+}
+.btn-adotar:hover {
+  color: white;
+}
+
+.btn-adotar {
+  background-color: #8bb86b;
+  color: white;
+  border: white;
+  padding: 10px 23px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-divulgar {
+  background-color: transparent;
+  color: #8bb86b;
+  border-radius: 10px;
+  padding: 10px 23px;
+  cursor: pointer;
+  border: 2px solid #8bb86b;
+}
+
+.botoes a{
+  text-decoration: none;
+}
+
+.pq {
+  color: #8bb86b;
+  margin-top: 90px;
+  margin-bottom: 20px; 
+  font-weight: bold;
+}
+
+.motivos {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  color: #8bb86b;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
