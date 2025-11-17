@@ -42,9 +42,11 @@ router.post("/login", (req, res) => {
             return res.status(401).json({ error: "Credenciais inválidas" });
         }
 
+        // usuário encontrado
         const user = results[0];
 
         res.json({
+            success: true,
             message: "Login realizado com sucesso",
             user: {
                 id: user.id,

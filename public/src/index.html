@@ -14,27 +14,29 @@
     
   </head>
 
-  <body>
-    <header class="header">
-      <nav class="nav">
-        <img class="logo" src="/img/logo.png" />
+<body>
+  <header class="header">
+    <nav class="nav">
+      <img class="logo" src="/img/logo.png" />
 
-        <div class="nav-direita">
-              <span id="user-name" class="username"></span>
-              <img src="/img/user.png" class="user-icon" width="50px"/>
-          <a href="/login" class="btn branco" id="loginBtn">
-            Login</a
-          >
-          <a
-            href="/cadastro"
-            class="btn verde"
-            id="cadastroBtn"
-          >
-            Cadastrar-se</a
-          >
-        </div>
-      </nav>
-    </header>
+  <div class="nav-direita">
+
+    <!-- Área do usuário logado -->
+      <div id="userArea" style="display: none; display: flex; align-items: center; gap: 10px;">
+          <img src="/img/user.png" class="user-icon" width="40px">
+           <span id="user-name"></span>
+      </div>
+
+          <!-- Botão de Logout (oculto até logar) -->
+        <a href="#" class="btn branco" id="logoutBtn" style="display: none;">Logout</a>
+
+          <!-- Botões padrão (visíveis antes do login) -->
+        <a href="/login" class="btn branco" id="loginBtn">Login</a>
+        <a href="/cadastro" class="btn verde" id="cadastroBtn">Cadastrar-se</a>
+      </div>
+    </nav>
+  </header>
+
     <main class="container-principal">
       <section class="text-content">
         <h1>
@@ -83,6 +85,6 @@
         </div>
       </section>
     </main>
-   <script src="user.js"></script>
+<script src="/js/user.js"></script>
   </body>
 </html>

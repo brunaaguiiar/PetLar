@@ -4,7 +4,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
 
-    const response = await fetch("/api/login", {
+    const response = await fetch("/api/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, senha })
@@ -13,9 +13,13 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const data = await response.json();
 
     if (response.ok) {
+
         localStorage.setItem("user", JSON.stringify(data.user));
+
+        alert("Login realizado com sucesso!");
         window.location.href = "/";
     } else {
         alert(data.error);
     }
 });
+
