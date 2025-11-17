@@ -45,6 +45,9 @@ body {
 
 /* Container de pets */
 .pets-container {
+    width: 100%;
+    max-width: 1200px; /* opcional — deixa o layout bonito */
+    margin: 0 auto;     /* centraliza */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     gap: 30px;
@@ -281,4 +284,56 @@ a {
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.form-container h1 {
+    color: #1e8b4a;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    color: #1e8b4a;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+}
+.pet-detalhes {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.pet-detalhes img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.pet-detalhes h1 {
+    margin-top: 20px;
+    color: #1e8b4a;
 }

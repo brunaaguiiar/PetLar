@@ -58,47 +58,43 @@ router.post("/login", (req, res) => {
 });
 
 
-// ----------------------
-// ROTA GET - Listar
-// ----------------------
-router.get('/', (req, res) => {
-    db.query('SELECT * FROM users', (err, results) => {
-        if (err) return res.status(500).json({ error: err });
 
+
+// LISTAR pets
+router.get("/", (req, res) => {
+    db.query("SELECT * FROM pets", (err, results) => {
+        if (err) return res.status(500).json({ error: err });
         res.json(results);
     });
 });
 
-// ----------------------
-// ROTA PUT - Editar
-// ----------------------
-router.put('/:id', (req, res) => {
-    const { nome, email } = req.body;
-    const { id } = req.params;
+// CADASTRAR pet
+router.post("/pets", (req, res) => {
+    const { nome, sexo, idade, descricao, imagem } = req.body;
 
-    db.query(
-        'UPDATE users SET nome = ?, email = ? WHERE id = ?',
-        [nome, email, id],
-        (err) => {
-            if (err) return res.status(500).json({ error: err });
+    const sql = "INSERT INTO pets (nome, sexo, idade, descricao, imagem) VALUES (?, ?, ?, ?, ?)";
 
-            res.json({ id, nome, email });
-        }
-    );
-});
-
-// ----------------------
-// ROTA DELETE - Excluir
-// ----------------------
-router.delete('/:id', (req, res) => {
-    const { id } = req.params;
-
-    db.query('DELETE FROM users WHERE id = ?', [id], (err) => {
+    db.query(sql, [nome, sexo, idade, descricao, imagem], (err, result) => {
         if (err) return res.status(500).json({ error: err });
 
-        res.sendStatus(204);
+        res.json({ id: result.insertId, nome, sexo, idade, descricao, imagem });
     });
 });
+
+
+// PEGAR PET POR ID
+router.get("/:id", (req, res) => {
+    const id = req.params.id;
+
+    db.query("SELECT * FROM pets WHERE id = ?", [id], (err, results) => {
+        if (err) return res.status(500).json({ error: err });
+
+        res.json(results[0]);
+    });
+});
+
+
+
 
 // exportar
 module.exports = router;

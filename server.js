@@ -40,6 +40,7 @@ app.use(express.json()); //habilitar o uso do json no express
 
 app.use("/api/users/", apiRoutes); //alcançar as rotas da api (api.js)
 
+app.use("/api/pets/", apiRoutes); //alcançar as rotas da api (api.js)
 //vincular o servidor na porta
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
