@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+}
+
+/* Navbar (igual da sua página atual) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+
+.btn-primary {
+    background: #1e8b4a;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+/* Banner */
+.banner {
+    text-align: left;
+    padding: 150px 20px;
+    background-image: url("/img/home.png");
+    background-repeat: no-repeat;
+    background-position: right 78%;
+    color:#1e8b4a;
+}
+
+.banner h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 18px;
+}
+
+/* Container de pets */
+.pets-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 30px;
+    padding: 40px 60px;
+}
+
+/* Card */
+.pet-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: transform .2s;
+}
+
+.pet-card:hover {
+    transform: scale(1.03);
+}
+
+/* Imagem */
+.pet-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Informações */
+.pet-info {
+    padding: 18px;
+}
+
+.pet-info h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #1e8b4a;
+}
+
+.desc {
+    font-size: 14px;
+    color: #444;
+    margin: 8px 0 14px;
+}
+
+/* Botão */
+.btn-adotar {
+    width: 100%;
+    background: #1e8b4a;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-adotar:hover {
+    background: #17753d;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    color: #666;
+}

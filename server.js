@@ -28,6 +28,10 @@ app.get("/cadastro", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "src", "cadastro.html"));
 });
 
+app.get("/pets", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "src", "pets.html"));
+});
+
 
 //importar o modulo de rotas
 const apiRoutes = require("./routes/api"); //puxa as rotas da api
