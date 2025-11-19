@@ -5,9 +5,9 @@ const router = express.Router();
 // conexão com o banco
 const db = require('../db');
 
-// ----------------------
+
 // ROTA POST - Cadastrar
-// ----------------------
+
 router.post('/', (req, res) => {
     const { nome, email, senha } = req.body;
 
@@ -27,9 +27,9 @@ router.post('/', (req, res) => {
     );
 });
 
-// ----------------------
+
 // ROTA POST - Login
-// ----------------------
+
 router.post("/login", (req, res) => {
     const { email, senha } = req.body;
 
@@ -61,6 +61,7 @@ router.post("/login", (req, res) => {
 
 
 // LISTAR pets
+
 router.get("/", (req, res) => {
     db.query("SELECT * FROM pets", (err, results) => {
         if (err) return res.status(500).json({ error: err });
@@ -69,6 +70,7 @@ router.get("/", (req, res) => {
 });
 
 // CADASTRAR pet
+
 router.post("/pets", (req, res) => {
     const { nome, sexo, idade, descricao, imagem } = req.body;
 
@@ -83,6 +85,7 @@ router.post("/pets", (req, res) => {
 
 
 // PEGAR PET POR ID
+
 router.get("/:id", (req, res) => {
     const id = req.params.id;
 
@@ -93,6 +96,53 @@ router.get("/:id", (req, res) => {
     });
 });
 
+
+// DELETE PET POR ID
+
+router.delete("/:id", (req, res) => {
+    const id = req.params.id;
+
+        db.query("DELETE FROM pets WHERE id = ?", [id], (err, result) => {
+        if (err) return res.status(500).json({ error: err });
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ error: "Pet não encontrado" });
+        }
+
+        res.json({ success: true, message: "Pet excluído com sucesso" });
+    });
+});
+
+
+
+
+// ATUALIZAR PET
+
+router.put("/pets/:id", (req, res) => {
+    const id = req.params.id;
+    const { nome, idade, sexo, descricao, imagem } = req.body;
+
+    db.query(
+        `UPDATE pets SET nome=?, idade=?, sexo=?, descricao=?, imagem=? WHERE id=?`,
+        [nome, idade, sexo, descricao, imagem, id],
+        (err) => {
+            if (err) return res.status(500).json(err);
+            res.json({ message: "Pet atualizado!" });
+        }
+    );
+});
+
+
+// DELETAR PET
+
+router.delete("/pets/:id", (req, res) => {
+    const id = req.params.id;
+
+    db.query("DELETE FROM pets WHERE id = ?", [id], (err) => {
+        if (err) return res.status(500).json(err);
+        res.json({ message: "Pet removido!" });
+    });
+});
 
 
 

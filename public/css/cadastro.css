@@ -1,42 +1,135 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #f8f9fa;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   color: #333;
 }
 
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 700;
+/* NAVBAR */
+.navbar {
+  padding: 15px 20px;
+  background: white;
+  border-bottom: 1px solid #eee;
 }
 
-.card {
-  border-radius: 1.5rem;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.btn-success {
-  background-color: #6cb76f;
+.logo {
+  width: 180px;
+}
+
+.nav-direita .btn {
+  margin-left: 10px;
+}
+
+/* BOTÕES */
+.btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+/* Botão branco */
+.branco {
+  background: white;
+  border: 2px solid #6cb76f;
+  color: #6cb76f;
+}
+
+.branco:hover {
+  background: #eaf7ef;
+}
+
+/* Botão verde */
+.verde {
+  background: #6cb76f;
   border: none;
+  color: white;
 }
 
-.btn-success:hover {
-  background-color: #5aa95d;
+.verde:hover {
+  background: #5aa95d;
 }
 
-.btn-outline-success {
-  color: #5aa95d;
-  border-color: #5aa95d;
+.full {
+  width: 100%;
 }
 
-.btn-outline-success:hover {
-  background-color: #5aa95d;
-  color: #fff;
+/* CARD CENTRAL */
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
 }
 
-.form-control:focus {
+.cadastro-card {
+  width: 420px;
+  padding: 35px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.cadastro-card h2 {
+  text-align: center;
+  color: #6cb76f;
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+/* FORMULÁRIO */
+label {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+
+input:focus {
   border-color: #6cb76f;
-  box-shadow: 0 0 0 0.15rem rgba(108, 183, 111, 0.25);
+  box-shadow: 0 0 3px rgba(108,183,111,0.4);
 }
 
-footer {
-  font-size: 0.9rem;
+/* LINK */
+.texto-link {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.texto-link a {
+  color: #6cb76f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.texto-link a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  color: #666;
+  font-size: 14px;
 }

@@ -1,0 +1,60 @@
+body {
+  background-color: #f8f9fa;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.form-container {
+  width: 55%;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #73994f;
+  margin-bottom: 25px;
+}
+
+label {
+  font-weight: bold;
+  color: #555;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #8bb86b;
+  box-shadow: 0 0 5px rgba(139,184,107,0.4);
+  outline: none;
+}
+
+/* Botão */
+.btn-salvar {
+  background-color: #8bb86b;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.btn-salvar:hover {
+  background-color: #6fa55a;
+}

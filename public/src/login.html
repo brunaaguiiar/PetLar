@@ -4,53 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login — PetLar</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/login.css">
-    
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-<header class="navbar navbar-expand-lg bg-white shadow-sm">
-    <div class="nav-left">
-        <a href="/"> 
-            <img src="/img/logo.png" alt="PetLar" height="40" class="me-2">
-        </a>
-    </div>
+<!-- NAVBAR PADRÃO -->
+<header class="header">
+    <nav class="nav">
 
-    <div class="nav-right">
-       
-        <a class="btn-primary" href="/cadastro">Cadastrar-se</a>
-    </div>
+        <!-- Logo -->
+        <a href="/">
+            <img class="logo" src="/img/logo.png" alt="PetLar Logo">
+        </a>
+
+        <div class="nav-direita">
+            <a href="/cadastro" class="btn verde">Cadastrar-se</a>
+        </div>
+
+    </nav>
 </header>
 
-    <!-- CONTEÚDO -->
-    <main class="container">
-        <div class="card">
-            <h2>Entrar na sua conta</h2>
+<!-- CONTEÚDO -->
+<main class="login-container">
+    <div class="login-card">
+        <h2>Entrar na sua conta</h2>
 
-            <form id="loginForm">
-                <label for="email">E-mail</label>
-                <input id="email" type="email" placeholder="Digite seu e-mail" required>
+        <form id="loginForm">
 
-                <label for="senha">Senha</label>
-                <input id="senha" type="password" placeholder="Digite sua senha" required>
+            <label for="email">E-mail</label>
+            <input id="email" type="email" required placeholder="Digite seu e-mail">
 
-                <button class="btn-primary full" type="submit">Entrar</button>
-            </form>
+            <label for="senha">Senha</label>
+            <input id="senha" type="password" required placeholder="Digite sua senha">
 
-            <p class="texto-link">
-                Não tem conta? <a href="/cadastro">Cadastrar-se</a>
-            </p>
-        </div>
-    </main>
+            <button class="btn verde full" type="submit">Entrar</button>
+        </form>
 
-    <!-- RODAPÉ -->
-    <footer class="footer">
-        © 2025 PetLar — Promovendo adoção responsável
-    </footer>
+        <p class="link-texto">
+            Não tem conta? <a href="/cadastro">Cadastrar-se</a>
+        </p>
+    </div>
+</main>
 
-    <script src="/js/login.js"></script>
+<!-- FOOTER -->
+<footer class="footer">
+    © 2025 PetLar — Promovendo adoção responsável
+</footer>
+
+<script src="/js/login.js"></script>
 
 </body>
 </html>

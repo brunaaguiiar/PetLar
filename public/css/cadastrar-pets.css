@@ -1,0 +1,70 @@
+body {
+  background-color: #f8f9fa;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.cadastrar-container {
+  width: 55%;
+  margin: 50px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #73994f;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+label {
+  font-weight: bold;
+  color: #555;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #bbb;
+  margin-top: 8px;
+  margin-bottom: 18px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #8bb86b;
+  box-shadow: 0 0 8px rgba(139,184,107,0.3);
+  outline: none;
+}
+
+.btn-cadastrar {
+  width: 100%;
+  background-color: #8bb86b;
+  color: white;
+  border: none;
+  padding: 13px;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-cadastrar:hover {
+  background-color: #6fa55a;
+}
+
+/* Preview da imagem */
+.preview-img {
+  margin-top: 15px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #ddd;
+}
+

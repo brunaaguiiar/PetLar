@@ -1,135 +1,26 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fafafa;
-}
-
-/* Navbar (igual da sua página atual) */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 40px;
-    background: white;
-    border-bottom: 1px solid #eee;
-}
-
-
-.btn-primary {
-    background: #1e8b4a;
-    padding: 12px 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-}
-/* Banner */
-.banner {
-    text-align: left;
-    padding: 200px 30px;
-    background-image: url("/img/home.png");
-    background-repeat: no-repeat;
-    background-position: right 78%;
-    color:#1e8b4a;
-}
-
-.banner h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.banner p {
-    font-size: 18px;
-}
-
-/* Container de pets */
-.pets-container {
-    width: 100%;
-    max-width: 1200px; /* opcional — deixa o layout bonito */
-    margin: 0 auto;     /* centraliza */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 30px;
-    padding: 40px 60px;
-}
-
-/* Card */
-.pet-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    transition: transform .2s;
-}
-
-.pet-card:hover {
-    transform: scale(1.03);
-}
-
-/* Imagem */
-.pet-img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-/* Informações */
-.pet-info {
-    padding: 18px;
-}
-
-.pet-info h3 {
-    margin: 0;
-    font-size: 22px;
-    color: #1e8b4a;
-}
-
-.desc {
-    font-size: 14px;
-    color: #444;
-    margin: 8px 0 14px;
-}
-
-/* Botão */
-.btn-adotar {
-    width: 100%;
-    background: #1e8b4a;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.btn-adotar:hover {
-    background: #17753d;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-    color: #666;
-}
+/* Reseta */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Header padrão */
 .header {
   padding-inline: 16px;
-}
-
-.logo {
-  width: 275px;
+  background-color: white;
+  border-bottom: 1px solid #eee;
 }
 
 .nav {
@@ -138,202 +29,165 @@ a {
   align-items: center;
 }
 
-.nav-lista {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-  margin: 0;
-  gap: 20px;
+.logo {
+  width: 200px;
+  cursor: pointer;
 }
 
-.nav-lista a {
-  font-size: 18px;
-  color: black;
-  padding-block: 16px;
-  text-decoration: none;
-}
-
-.nav-lista a:hover {
-  color: #8bb86b;
-}
-
+/* Botões direita */
 .nav-direita {
   display: flex;
   gap: 15px;
 }
+
 .btn {
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
 }
 
-.btn.verde {
-  background-color: #73994f;
-  color: white;
-  border: 2px solid #73994f;
+.branco {
+    background: white;
+    border: 1px solid #8bb86b;
+    color: #8bb86b;
 }
 
-.btn.verde:hover {
-  background-color: white;
-  color: #8bb86b;
+.verde {
+    background: #8bb86b;
+    color: white;
+    border: none;
 }
 
-.btn.branco {
-  background-color: white;
-  color: #8bb86b;
-  border: 2px solid #8bb86b;
+.vermelho {
+    background: #d9534f;
+    color: white;
 }
 
-.btn.branco:hover {
-  background-color: #8bb86b;
-  color: white;
-}
-
-.container-principal {
-  height: 430px;
-  background-image: url("/img/home.png");
-  background-size: contain;
-  background-position: right 78%;
-  background-repeat: no-repeat;
-}
-
-.text-content {
-  width: 55%;
+/* Lista de pets */
+.pets-container {
   padding: 40px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
 }
 
-.text-content h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
 
-.text-content p {
-  font-size: 1.1em;
-  margin-bottom: 30px;
-  color: #555;
-}
-
-
-.botoes {
-  display: flex;
-  gap: 30px;
-}
-
-.btn-adotar,
-.btn-divulgar {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-adotar:hover,
-.btn-divulgar:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-divulgar:hover {
+.pets-titulo {
   color: #8bb86b;
-}
-.btn-adotar:hover {
-  color: white;
-}
-
-.btn-adotar {
-  background-color: #8bb86b;
-  color: white;
-  border: white;
-  padding: 10px 23px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.btn-divulgar {
-  background-color: transparent;
-  color: #8bb86b;
-  border-radius: 10px;
-  padding: 10px 23px;
-  cursor: pointer;
-  border: 2px solid #8bb86b;
-}
-
-.botoes a{
-  text-decoration: none;
-}
-
-.pq {
-  color: #8bb86b;
-  margin-top: 90px;
-  margin-bottom: 20px; 
+  margin-bottom: 25px;
+  font-size: 28px;
   font-weight: bold;
 }
 
-.motivos {
-  display: flex;
-  gap: 20px;
+.lista-pets {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
 }
 
-.card {
-  color: #8bb86b;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.card-pet {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  text-align: center;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.card-pet:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-.form-container {
-    max-width: 500px;
-    margin: 40px auto;
-    background: white;
-    padding: 25px;
+.card-pet img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card-pet h3 {
+  margin-top: 10px;
+  color: #73994f;
+}
+
+.btn-ver {
+  margin-top: 12px;
+  background-color: #8bb86b;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-ver:hover {
+  background-color: #6fa55a;
+  transform: translateY(-3px);
+}
+
+.card-pet img {
+    width: 100%;
+    height: 230px;      
+    aspect-ratio: 4/3;
+    object-fit: cover;      
     border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    background-color: #eee;   
 }
 
-.form-container h1 {
-    color: #1e8b4a;
-    text-align: center;
-    margin-bottom: 20px;
+.card-pet{
+  background: #fff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  transition: transform .2s;
 }
 
-form label {
+.card-pet:hover {
+  transform: translateY(-5px);
+}
+
+.pet-img {
+  width: 100%;
+  height: 260px; /* ajuste o tamanho que quiser */
+  object-fit: cover;
+  display: block;
+}
+
+.pet-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.btn-adotar {
+  background-color: #6cb76f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-adotar:hover {
+  background-color: #5aa95d;
+}
+
+.pet-card {
+    width: 100%;
+    max-width: 400px;   /* deixa todos os cards com o mesmo tamanho */
+    margin: 20px auto;
+}
+
+.pet-img {
+    width: 100%;
+    height: 250px;      /* altura fixa */
+    object-fit: cover;  /* corta a imagem mantendo ela bonita */
+    border-radius: 15px 15px 0 0;
     display: block;
-    margin-top: 15px;
-    color: #1e8b4a;
-}
-
-form input, form textarea, form select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 4px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-button {
-    margin-top: 20px;
-    width: 100%;
-}
-.pet-detalhes {
-    max-width: 900px;
-    margin: 40px auto;
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-.pet-detalhes img {
-    width: 100%;
-    border-radius: 12px;
-}
-
-.pet-detalhes h1 {
-    margin-top: 20px;
-    color: #1e8b4a;
 }
