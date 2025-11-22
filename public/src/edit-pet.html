@@ -16,16 +16,24 @@
 
 <body>
 
-<header class="header">
-    <nav class="nav">
-      <img class="logo" src="/img/logo.png" />
+    <header class="header">
+        <nav class="nav">
+            <a href="/">
+                <img class="logo" src="/img/logo.png" alt="PetLar Logo">
+            </a>
 
-      <div class="nav-direita">
-        <a href="/" class="btn branco">Início</a>
-        <a href="/pets" class="btn verde">Pets</a>
-      </div>
-    </nav>
-</header>
+            <div class="nav-direita">
+                <div id="userArea" style="display: none; align-items: center; gap: 10px;">
+                    <img src="/img/user.png" class="user-icon" width="40">
+                    <span id="user-name"></span>
+                </div>
+
+                <a href="#" class="btn branco" id="logoutBtn" style="display: none;">Logout</a>
+                <a href="/login" class="btn branco" id="loginBtn">Login</a>
+                <a href="/cadastro" class="btn verde" id="cadastroBtn">Cadastrar-se</a>
+            </div>
+        </nav>
+    </header>
 
 <div class="container my-4">
 
@@ -46,10 +54,7 @@
 
             <div class="col-md-6">
                 <label class="form-label">Sexo</label>
-                <select id="sexo" class="form-select" required>
-                    <option value="Macho">Macho</option>
-                    <option value="Fêmea">Fêmea</option>
-                </select>
+                <input type="text" id="sexo" class="form-control" required>
             </div>
 
             <div class="col-12">
