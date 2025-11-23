@@ -1,21 +1,20 @@
-// arquivo principal do servidor
+
 const express = require("express");
 const app = express();
 const port = 3000;
-const path = require("path"); //pegar o caminho dos arquivos estaticos
+const path = require("path"); 
 
-// middlewares
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//informar onde os arquivos estao
 
-app.use(express.static(path.join(__dirname, "public"))); //pasta raiz dos arquivos estaticos
+app.use(express.static(path.join(__dirname, "public"))); 
 
-//chamar o modulo de conecxão com o banco de dados
+
 const db = require("./db");
 
-//api - rotas do sistema
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "src", "index.html"));
 });
@@ -42,10 +41,10 @@ app.get("/edit-pet", (req, res) => {
 
 
 
-//importar o modulo de rotas
-const apiRoutes = require("./routes/api"); //puxa as rotas da api
 
-app.use(express.json()); //habilitar o uso do json no express
+const apiRoutes = require("./routes/api"); 
+
+app.use(express.json()); 
 
 app.use("/api", apiRoutes);
 

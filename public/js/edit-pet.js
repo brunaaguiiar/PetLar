@@ -20,9 +20,7 @@ async function carregarPet() {
 
 document.addEventListener("DOMContentLoaded", carregarPet);
 
-// ---------------------
-// SALVAR ALTERAÇÕES
-// ---------------------
+
 document.getElementById("form-editar-pet").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -50,9 +48,7 @@ document.getElementById("form-editar-pet").addEventListener("submit", async (e) 
     }
 });
 
-// ---------------------
-// EXCLUIR PET
-// ---------------------
+
 document.getElementById("btn-excluir").addEventListener("click", async () => {
 
     if (!confirm("Tem certeza que deseja excluir este pet?")) return;

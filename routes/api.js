@@ -1,14 +1,11 @@
-// importar o express
+
 const express = require('express');
 const router = express.Router();
 
-// conexão com o banco
 const db = require('../db');
 
 
-// ------------------ USERS ------------------
 
-// Cadastrar usuário
 router.post('/users', (req, res) => {
     const { nome, email, senha } = req.body;
 
@@ -28,7 +25,7 @@ router.post('/users', (req, res) => {
     );
 });
 
-// Login
+
 router.post("/users/login", (req, res) => {
     const { email, senha } = req.body;
 
@@ -59,9 +56,8 @@ router.post("/users/login", (req, res) => {
 });
 
 
-// ------------------ PETS ------------------
 
-// Listar todos pets
+
 router.get("/pets", (req, res) => {
     db.query("SELECT * FROM pets", (err, results) => {
         if (err) return res.status(500).json({ error: err });
@@ -69,7 +65,7 @@ router.get("/pets", (req, res) => {
     });
 });
 
-// Criar pet
+
 router.post("/pets", (req, res) => {
     const { nome, sexo, idade, descricao, imagem } = req.body;
 
@@ -84,7 +80,7 @@ router.post("/pets", (req, res) => {
     );
 });
 
-// Buscar pet por ID
+
 router.get("/pets/:id", (req, res) => {
     const id = req.params.id;
 
@@ -98,7 +94,7 @@ router.get("/pets/:id", (req, res) => {
     });
 });
 
-// Atualizar pet
+
 router.put("/pets/:id", (req, res) => {
     const id = req.params.id;
     const { nome, idade, sexo, descricao, imagem } = req.body;
@@ -113,7 +109,7 @@ router.put("/pets/:id", (req, res) => {
     );
 });
 
-// Deletar pet
+
 router.delete("/pets/:id", (req, res) => {
     const id = req.params.id;
 
@@ -128,5 +124,5 @@ router.delete("/pets/:id", (req, res) => {
 });
 
 
-// exportar
+
 module.exports = router;

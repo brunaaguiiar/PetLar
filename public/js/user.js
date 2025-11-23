@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const user = JSON.parse(localStorage.getItem("user"));
 
     if (user) {
-        // Usuário está logado
+        
         userArea.style.display = "flex";
         userName.textContent = user.nome || user.email;
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cadastroBtn.style.display = "none";
         logoutBtn.style.display = "block";
     } else {
-        // Usuário NÃO está logado
+    
         userArea.style.display = "none";
 
         loginBtn.style.display = "block";
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
         logoutBtn.style.display = "none";
     }
 
-    // Botão de logout
+
     logoutBtn.addEventListener("click", () => {
         localStorage.removeItem("user");
-        window.location.reload(); // recarrega a página
+        window.location.reload(); 
     });
 });
