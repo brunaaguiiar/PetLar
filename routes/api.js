@@ -9,7 +9,7 @@ const db = require('../db');
 // ------------------ USERS ------------------
 
 // Cadastrar usuário
-router.post('/', (req, res) => {
+router.post('/users', (req, res) => {
     const { nome, email, senha } = req.body;
 
     db.query(
@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
 });
 
 // Login
-router.post("/login", (req, res) => {
+router.post("/users/login", (req, res) => {
     const { email, senha } = req.body;
 
     db.query(

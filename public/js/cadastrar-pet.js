@@ -10,7 +10,7 @@ document.getElementById("formCadastrarPet").addEventListener("submit", async (e)
     };
 
     try {
-        const resposta = await fetch("/api/pets/pets", {
+        const resposta = await fetch("/api/pets", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(pet)

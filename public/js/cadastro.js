@@ -26,6 +26,8 @@ function cadastrarUsuario(nome, email, senha) {
 
       alert("Usuário cadastrado com sucesso!");
 
+      window.location.href = "/login";
+
       form.reset();
     })
     .catch((err) => console.error("Erro:", err));
